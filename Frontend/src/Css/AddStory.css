@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
 .Inclusive-addStory-page {
     width: 1000px;
     margin: 1.2rem auto;
@@ -157,4 +157,180 @@
     color: black;
     font-weight: bold;
     padding-left: 1rem;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+
+/* Container chính */
+.Inclusive-addStory-page {
+    width: 1000px;
+    margin: 1.2rem auto;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 1001px) {
+    .Inclusive-addStory-page {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Form chính */
+.Inclusive-addStory-page .addStory-form {
+    width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 651px) {
+    .Inclusive-addStory-page .addStory-form {
+        width: 90%;
+    }
+}
+
+/* Input title */
+.addStory-form input#title {
+    width: 100%;
+    height: 55px;
+    outline: 0;
+    border: 1px solid rgb(235, 235, 235);
+    font-size: 1.4rem;
+    padding-left: 1rem;
+    font-weight: 450;
+    font-family: 'Balsamiq Sans', cursive;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+/* CKEditor Styling */
+.ck-editor {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.ck-editor__editable {
+    height: 250px;
+    padding: 0.5rem 1rem !important;
+}
+
+/* Image Upload Field */
+.StoryImageField {
+    border: 1px solid rgb(235, 235, 235);
+    width: 100%;
+    height: 240px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 1rem;
+    position: relative;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    /* Giữ cho preview hình ảnh gọn */
+}
+
+.StoryImageField svg {
+    font-size: 2rem;
+    color: #777;
+}
+
+.StoryImageField .txt {
+    margin-top: 10px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.StoryImageField [type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Preview hình ảnh */
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Nút Submit */
+.addStory-btn,
+.dis-btn {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addStory-btn {
+    background-color: #0063a5;
+}
+
+.addStory-btn:hover {
+    background-color: #00508a;
+}
+
+.dis-btn {
+    background-color: #0063a5;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Error và Success Messages */
+.addStory-form .error_msg,
+.addStory-form .success_msg {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error_msg {
+    background-color: rgba(245, 72, 72, 0.9);
+    color: white;
+}
+
+.success_msg {
+    background-color: rgba(14, 218, 75, 0.9);
+    color: white;
+}
+
+.success_msg a {
+    color: black;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+/* Responsive Fix */
+@media only screen and (max-width: 480px) {
+    .addStory-form input#title {
+        font-size: 1.2rem;
+    }
+
+    .StoryImageField {
+        height: 200px;
+    }
+
+    .StoryImageField svg {
+        font-size: 1.5rem;
+    }
 }

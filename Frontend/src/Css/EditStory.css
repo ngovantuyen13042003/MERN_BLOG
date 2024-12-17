@@ -1,190 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap");
+
+/* Container Chính */
 .Inclusive-editStory-page {
-    width: 1000px;
-    margin: 1.2rem auto;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 1001px) {
     .Inclusive-editStory-page {
         width: 100%;
+        padding: 1rem;
     }
 }
 
-.Inclusive-editStory-page .editStory-form {
-    position: relative;
-    width: 650px;
-    margin: 0 auto;
+/* Form Chỉnh Sửa */
+.editStory-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1.5rem;
 }
 
 .editStory-form input#title {
     width: 100%;
-    height: 55px;
-    outline: 0;
-    border: none;
-    border: rgb(235, 235, 235) solid 1px;
-    font-size: 1.4rem;
-    padding-left: 1rem;
-    font-weight: 450;
-    font-family: 'Balsamiq Sans', cursive;
-    border-bottom: none;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: "Balsamiq Sans", cursive;
 }
 
-.ck-editor {
-    margin-bottom: 1rem !important;
-}
-
-@media only screen and (max-width: 651px) {
-    .Inclusive-editStory-page .editStory-form {
-        width: 80vw;
-    }
-    .ck.ck-reset.ck-editor.ck-rounded-corners {
-        width: 100% !important;
-    }
-}
-
-.ck-editor__top * {
-    border: none !important;
-}
-
-.ck-editor__top {
-    border: rgb(235, 235, 235) solid 1px !important;
-    border-bottom: none !important;
-    padding: 0.6rem 1rem !important;
-}
-
-.ck-content {
-    border: rgb(235, 235, 235) solid 1px !important;
-}
-
-.ck-toolbar__items,
-.ck-toolbar div {
-    border: none !important;
-}
-
+/* CKEditor */
 .ck-editor__editable {
     height: 250px;
-    padding: 0.5rem 1rem !important;
 }
 
-.ck-editor__editable:focus {
-    box-shadow: none !important;
-}
-
-.StoryImageField {
-    border: rgb(235, 235, 235) solid 1px;
-    width: 100%;
-    height: 240px;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-    margin-top: 1rem;
-    position: relative;
-}
-
-.StoryImageField svg {
-    font-size: 1.4rem;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.StoryImageField .txt {
-    width: 350px;
-    height: auto;
-    margin-top: 14px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.StoryImageField [type="file"] {
-    width: 100%;
-    height: 200px;
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.editStory-btn {
-    width: 100%;
-    background-color: #0063a5;
-    padding: 0.7rem;
-    color: white;
-    margin-top: 1.9rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
-}
-
-.dis-btn {
-    width: 100%;
-    background-color: #0063a5;
-    padding: 0.7rem;
-    color: white;
-    margin-top: 1.9rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    opacity: 0.4;
-}
-
-.editStory-form .error_msg {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    background-color: rgba(245, 72, 72, 0.9);
-    color: white;
-    padding: 8px;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.editStory-form .success_msg {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    background-color: rgba(14, 218, 75, 0.9);
-    color: white;
-    padding: 8px;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.editStory-form .success_msg a {
-    color: black;
-    font-weight: bold;
-    padding-left: 1rem;
-}
-
+/* Hiển Thị Hình Ảnh Hiện Tại */
 .currentlyImage {
+    position: relative;
     width: 100%;
     height: 280px;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-    margin-top: 2rem;
-    position: relative;
-}
-
-.currentlyImage .absolute {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    opacity: 0.6;
-    font-family: 'Mukta ', sans-serif;
-    z-index: 52;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .currentlyImage img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
+}
+
+.currentlyImage .absolute {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Upload Hình Ảnh Mới */
+.StoryImageField {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.StoryImageField svg {
+    font-size: 2rem;
+    color: #777;
+}
+
+.StoryImageField .txt {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.StoryImageField input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Nút Submit */
+.editStory-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #0063a5;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.editStory-btn:hover {
+    background-color: #00508a;
+}
+
+/* Error và Success Messages */
+.error_msg,
+.success_msg {
+    padding: 0.8rem;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.error_msg {
+    background-color: #e63946;
+}
+
+.success_msg {
+    background-color: #14a44d;
+}
+
+.success_msg a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
 }

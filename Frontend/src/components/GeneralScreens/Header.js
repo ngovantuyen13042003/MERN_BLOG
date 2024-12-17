@@ -38,7 +38,7 @@ const Header = () => {
 
                 <Link to="/" className="logo">
                     <h5>
-                        Captain Tuyen
+                        BIGBOSS
                     </h5>
                 </Link>
                 <SearchForm />
@@ -72,7 +72,7 @@ const Header = () => {
                                 <div className="sub-profile-wrap  ">
                                     <Link className='profile-link' to="/profile"  > <FaUserEdit />  Profile </Link>
 
-                                    <button className='logout-btn' onClick={handleLogout}> <BiLogOut />  Logout</button>
+                                    <button className='logout-btn' onClick={handleLogout}> <BiLogOut /> <span>Logout</span></button>
 
                                 </div>
 

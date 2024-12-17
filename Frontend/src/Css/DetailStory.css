@@ -103,9 +103,9 @@ li.story-readtime {
 
 .story-banner-img img {
     width: 92%;
-    height: 400px;
+    height: 550px;
     margin: 1.9rem 0;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .story-content a {
@@ -213,7 +213,7 @@ li.story-readtime {
     width: 1000px;
     margin: 0 auto;
     padding: 20px 8px;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     background-color: #fbfdff;
 }

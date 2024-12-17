@@ -23,15 +23,12 @@ const Home = () => {
         const { data } = await axios.get(
           `/story/getAllStories?search=${searchKey || ""}&page=${page}`
         );
-
-        // Điều hướng URL
         navigate({
           pathname: "/",
           search: searchKey
             ? `?search=${searchKey}${page > 1 ? `&page=${page}` : ""}`
             : `${page > 1 ? `?page=${page}` : ""}`,
         });
-
         setStories(data.data);
         setPages(data.pages);
       } catch (error) {
@@ -40,7 +37,6 @@ const Home = () => {
         setLoading(false);
       }
     };
-
     getStories();
   }, [searchKey, page, navigate]);
 
